@@ -1,35 +1,74 @@
+function addCustomer() {
+    const id = document.getElementById("txtId").value;
+    const name = document.getElementById("txtName").value;
+    const age = document.getElementById("txtAge").value;
+    const city = document.getElementById("txtCity").value;
+    const salary = document.getElementById("txtSalary").value;
+
+    const customer = { id, name, age, city, salary };
+    customerNames.push(customer);
+    loadCustomerTable();
+}
+
 const customerNames = [];
 
-function btnClickName(){
-    let txtName = document.getElementById("txtName").value;
-    customerNames.push(txtName);
-    console.log(customerNames);
-    loadNames();
+function loadCustomerTable() {
+    let body = `<tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Salary</th>
+    </tr>`;
+
+
+    for (let customer of customerNames) {
+        body += `<tr>
+            <td>${customer.id}</td>
+            <td>${customer.name}</td>
+            <td>${customer.age}</td>
+            <td>${customer.city}</td>
+            <td>${customer.salary}</td>
+        </tr>`;
+    }
+    document.getElementById("CustomerTable").innerHTML = body;
+
+}
+function addCustomer() {
+    const id = document.getElementById("txtId").value;
+    const name = document.getElementById("txtName").value;
+    const price = document.getElementById("txtAge").value;
+    const  = document.getElementById("txtCity").value;
+    const salary = document.getElementById("txtSalary").value;
+
+    const customer = { id, name, age, city, salary };
+    customerNames.push(customer);
+    loadCustomerTable();
 }
 
-function loadNames() {
-    document.getElementById("lblName").innerHTML = "Hello, " + customerNames[customerNames.length - 1];
-    let olNames = document.getElementById("olnames");
-    olNames.innerHTML = "";
-    for(let cName of customerNames){
-        olNames.innerHTML += `<li>${cName}</li>`;
-    };
+const ItemNames = [];
+
+function loadItemTable() {
+    let body = `<tr>
+        <th>ID</th>
+        <th>Item Name</th>
+        <th>Price</th>
+        <th>Material</th>
+        <th>Discount</th>
+    </tr>`;
+
+
+    for (let item of ItemNames) {
+        body += `<tr>
+            <td>${item.id}</td>
+            <td>${item.name}</td>
+            <td>${item.price}</td>
+            <td>${item.material}</td>
+            <td>${item.discount}</td>
+        </tr>`;
+    }
+    document.getElementById("CustomerTable").innerHTML = body;
+
 }
 
-const itemNames = [];
 
-function btnClickItem(){
-    let txtItem = document.getElementById("txtItem").value;
-    itemNames.push(txtItem);
-    console.log(itemNames);
-    loadItems();
-}   
-
-function loadItems() {
-    document.getElementById("lblItem").innerHTML = "Last added: " + itemNames[itemNames.length - 1];
-    let olItems = document.getElementById("olitems");
-    olItems.innerHTML = "";
-    for(let itemName of itemNames){
-        olItems.innerHTML += `<li>${itemName}</li>`;
-    };
-}

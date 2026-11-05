@@ -3,20 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Customer Table</title>
 </head>
 <body>
-    <input type="text" id="txtName" placeholder="Enter your name">
-    <button onclick="btnClickName()">Submit</button>
-    <p id="lblName"></p>
-    <ol id="olnames"></ol>
+        <input id="txtId" type="text" placeholder="Enter your ID" required>
+        <input id="txtName" type="text" placeholder="Enter your name" required>
+        <input id="txtAge" type="number" min="0" placeholder="Enter your age" required>
+        <input id="txtCity" type="text" placeholder="Enter your city" required>
+        <input id="txtSalary" type="number" min="0" step="any" placeholder="Enter your salary" required>
+        <button type="submit" onclick="addCustomer()">Add Customer</button>
 
-    <br>
-    <input type="text" id="txtItem" placeholder="Enter item name">
-    <button onclick="btnClickItem()">Add Item</button>
-    <p id="lblItem"></p>
-    <ol id="olitems"></ol>
+    <table id="CustomerTable" border="2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+              <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody id="tblBody"></tbody>
+    </table>
 
-    <script src="app.js"></script>
+
+        <input id="txtId" type="text" placeholder="Enter Item ID" required>
+        <input id="txtItem" type="text" placeholder="Enter Item Name" required>
+        <input id="txtPrice" type="number" min="0" placeholder="Enter Price" required>
+        <input id="txtMaterial" type="text" placeholder="Enter Material" required>
+        <input id="txtDiscount" type="number" min="0" step="any" placeholder="Enter Discount" required>
+        <button type="submit" onclick="addItem()">Add Item</button>
+
+    <table id="ItemTable" border="2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Item Name</th>
+                <th>Price</th>
+                <th>Material</th>
+                <th>Discount</th>
+            </tr>
+        </thead>
+        <tbody id="tblBody"></tbody>
+    </table>
+
+    <script src="app.js" defer></script>
 </body>
 </html>
